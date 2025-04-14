@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Planning Ontology Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Trip Planning Ontology Documentation</h1>
+    <p>This project contains an ontology for modeling online trip planning services, along with instance data and documentation.</p>
+    
+    <div class="container">
+        <h2>LODE Documentation</h2>
+        <p>The full ontology documentation is available through LODE (Live OWL Documentation Environment):</p>
+        <p><a href="http://150.146.207.114/lode/extract?url=https%3A%2F%2Fgist.githubusercontent.com%2Fhoussamallali%2Fcf7ed8508c767c8b0e1fa82209446974%2Fraw%2F48f3b4171e4493896fada1d3a61ce44b9c3e17cb%2Fgistfile1.txt&owlapi=true&imported=true&closure=true&reasoner=true&lang=en" target="_blank">
+            View full LODE documentation
+        </a></p>
+    </div>
+
+    <div class="container">
+        <h2>Overview</h2>
+        <p>The Trip Planning Ontology models:</p>
+        <ul>
+            <li>Transportation modes and lines</li>
+            <li>Trip segments and itineraries</li>
+            <li>Weather conditions</li>
+            <li>Pricing models</li>
+            <li>Accommodations</li>
+            <li>Trip planning services and operations</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Key Components</h2>
+        <p>The ontology contains:</p>
+        <ul>
+            <li><strong>Classes:</strong> Trip Plan, Trip Segment, Transportation Mode, Weather, etc.</li>
+            <li><strong>Object Properties:</strong> hasWeather, hasConnection, usesTransportationLine, etc.</li>
+            <li><strong>Data Properties:</strong> price, duration, temperature, etc.</li>
+            <li><strong>Named Individuals:</strong> Sample trip segments, transportation lines, pricing models, etc.</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Project Files</h2>
+        <p>You can find the following files in this project:</p>
+        <ul>
+            <li><code>../ontology/ontology.rdf</code> - Ontology in RDF/XML format</li>
+            <li><code>../instances/trip_instances.ttl</code> - Sample instances demonstrating the ontology</li>
+        </ul>
+    </div>
+</body>
+</html> 

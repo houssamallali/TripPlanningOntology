@@ -1,0 +1,166 @@
+# Trip Planning Ontology Sample Instances
+
+
+
+@prefix : <http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/> .
+
+#################################################################
+#    Individuals
+#################################################################
+
+# Note: All previously external individuals have been merged with their local counterparts
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/BerlinToParis
+:BerlinToParis rdf:type owl:NamedIndividual ,
+                        :OneWayTrip ;
+               :hasMode :ModeTrain ;
+               :hasPricingModel :DynamicPricing2 ;
+               :hasStop :StopBerlinHbf ,
+                        :StopParisEst ;
+               :usesTransportationLine :LineTGVBerlinParis ;
+               :duration 360 ;
+               :isInternational "true"^^xsd:boolean ;
+               :price 95.50 ;
+               :priceCurrency "EUR" ;
+               :remainingSeats 40 ;
+               rdfs:label "SegmentReturn (Berlin to Paris)" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/BookTicket
+:BookTicket rdf:type owl:NamedIndividual ,
+                     :Operation .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/CologneConnection
+:CologneConnection rdf:type owl:NamedIndividual ,
+                            :Connection ;
+                   :hasMode :ModeTrain ;
+                   :transferTime 20 ;
+                   rdfs:label "Transfer at Cologne Hbf" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/DynamicPricing1
+:DynamicPricing1 rdf:type owl:NamedIndividual ,
+                          :DynamicPricingModel ;
+                 rdfs:comment "Price fluctuates based on seat availability or demand." ;
+                 rdfs:label "ICE Dynamic Pricing Model" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/DynamicPricing2
+:DynamicPricing2 rdf:type owl:NamedIndividual ,
+                          :DynamicPricingModel ;
+                 rdfs:comment "Return trip also uses a dynamic pricing approach." ;
+                 rdfs:label "Return Trip Dynamic Pricing" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/FixedPricing1
+:FixedPricing1 rdf:type owl:NamedIndividual ,
+                        :FixedPricingModel ;
+               rdfs:comment "Price remains constant regardless of seat availability." ;
+               rdfs:label "TGV Fixed Pricing Model" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/LineICECologneBerlin
+:LineICECologneBerlin rdf:type owl:NamedIndividual ,
+                               :TransportationLine ;
+                      rdfs:label "ICE from Cologne to Berlin Hbf" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/LineTGVBerlinParis
+:LineTGVBerlinParis rdf:type owl:NamedIndividual ,
+                             :TransportationLine ;
+                    rdfs:label "TGV from Berlin to Paris Est" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/LineTGVParisCologne
+:LineTGVParisCologne rdf:type owl:NamedIndividual ,
+                              :TransportationLine ;
+                     rdfs:label "TGV from Paris Est to Cologne" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/ModeTrain
+:ModeTrain rdf:type owl:NamedIndividual ,
+                    :TransportationMode ;
+           :modeName "Train" ;
+           rdfs:label "Train Mode" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/OneWayTrip1
+:OneWayTrip1 rdf:type owl:NamedIndividual ,
+                      :OneWayTrip ;
+             :hasMode :ModeTrain ;
+             :hasPricingModel :FixedPricing1 ;
+             :hasStop :StopCologneHbf ,
+                      :StopParisEst ;
+             :usesTransportationLine :LineTGVParisCologne ;
+             :duration 200 ;
+             :isInternational "true"^^xsd:boolean ;
+             :price 60.00 ;
+             :priceCurrency "EUR" ;
+             :remainingSeats 50 ;
+             rdfs:label "Segment Paris to Cologne (TGV)" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/OneWayTrip2
+:OneWayTrip2 rdf:type owl:NamedIndividual ,
+                      :OneWayTrip ;
+             :hasConnection :CologneConnection ;
+             :hasMode :ModeTrain ;
+             :hasPricingModel :DynamicPricing1 ;
+             :hasStop :StopBerlinHbf ,
+                      :StopCologneHbf ;
+             :usesTransportationLine :LineICECologneBerlin ;
+             :duration 240 ;
+             :isInternational "false"^^xsd:boolean ;
+             :price 79.99 ;
+             :priceCurrency "EUR" ;
+             :remainingSeats 20 ;
+             rdfs:label "Segment Cologne to Berlin (ICE)" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/ParisBerlinRoundTrip
+:ParisBerlinRoundTrip rdf:type owl:NamedIndividual ,
+                               :RoundTripPlan ;
+                      :hasItinerary :OneWayTrip1 ,
+                                    :OneWayTrip2 ;
+                      :hasReturnTrip :BerlinToParis ;
+                      rdfs:label "Round Trip Plan: Paris <-> Berlin" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/PlanTripOp
+:PlanTripOp rdf:type owl:NamedIndividual ,
+                     :PlanTripOperation ;
+            :maxConnectionsAllowed 2 ;
+            rdfs:label "Plan a MultiLeg Trip" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/StopBerlinHbf
+:StopBerlinHbf rdf:type owl:NamedIndividual ,
+                        :Stop ;
+               rdfs:label "Berlin Hauptbahnhof" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/StopCologneHbf
+:StopCologneHbf rdf:type owl:NamedIndividual ,
+                         :Stop ;
+                rdfs:label "Koln Hauptbahnhof (Cologne Hbf)" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/StopParisEst
+:StopParisEst rdf:type owl:NamedIndividual ,
+                       :Stop ;
+              rdfs:label "Paris Est (Station)" .
+
+
+###  http://www.semanticweb.org/allalihoussam/ontologies/2025/3/untitled-ontology-11/TravelBuddy
+:TravelBuddy rdf:type owl:NamedIndividual ,
+                      :TripPlanningService ;
+             :hasOperation :BookTicket ,
+                           :PlanTripOp ;
+             rdfs:label "Travel Buddy" . 
