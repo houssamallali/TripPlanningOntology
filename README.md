@@ -13,6 +13,27 @@ The ontology provides a formal vocabulary for describing:
 - Weather conditions affecting travel
 - Accommodation options
 
+## 📚 Documentation
+
+### [View Full Ontology Documentation](http://150.146.207.114/lode/extract?url=https%3A%2F%2Fgist.githubusercontent.com%2Fhoussamallali%2Fcf7ed8508c767c8b0e1fa82209446974%2Fraw%2F48f3b4171e4493896fada1d3a61ce44b9c3e17cb%2Fgistfile1.txt&owlapi=true&imported=true&closure=true&reasoner=true&lang=en)
+
+[![Documentation](https://img.shields.io/badge/LODE-View%20Documentation-blue?style=for-the-badge)](http://150.146.207.114/lode/extract?url=https%3A%2F%2Fgist.githubusercontent.com%2Fhoussamallali%2Fcf7ed8508c767c8b0e1fa82209446974%2Fraw%2F48f3b4171e4493896fada1d3a61ce44b9c3e17cb%2Fgistfile1.txt&owlapi=true&imported=true&closure=true&reasoner=true&lang=en)
+
+The Trip Planning Ontology is fully documented using LODE (Live OWL Documentation Environment), providing:
+
+- Complete class hierarchy with descriptions
+- Object and data properties with domains and ranges
+- Visualization of relationships between concepts
+- Examples of named individuals
+
+**How to access the documentation:**
+1. Click the blue badge above or the "View Full Ontology Documentation" link
+2. The documentation will open in LODE's web interface
+3. Navigate through sections using the table of contents on the left
+4. Each ontology element is hyperlinked for easy navigation
+
+Additionally, you can find basic HTML documentation in the `documentation/` folder of this repository.
+
 ## 📂 Repository Structure
 
 ```
