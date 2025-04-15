@@ -1,6 +1,6 @@
 # Trip Planning Ontology Project
 
-![Trip Planning Banner](https://i.imgur.com/0p3KGtX.png)
+![Trip Planning Ontology](trip-planning-ontology.png)
 
 ## Overview
 
